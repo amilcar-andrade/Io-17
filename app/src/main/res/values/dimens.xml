@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="small_image_w">90dp</dimen>
+    <dimen name="small_image_h">48dp</dimen>
+
+    <item name="body_1_spacing" format="float" type="dimen">1.2448979592</item>
+</resources>

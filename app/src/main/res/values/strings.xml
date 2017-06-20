@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Google</string>
+    <string name="description">If you lost an item during the event, stop by the Help Desk before you head out to see if it has been found.</string>
+    <string name="title">Lost &amp; Found items</string>
+    <string name="date">May 19, 6:56 PM</string>
+    <string name="tag">Miscellaneous</string>
+    <string name="feed">Feed</string>
+</resources>
