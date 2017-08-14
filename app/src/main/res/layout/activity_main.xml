@@ -58,7 +58,6 @@
         android:layout_marginEnd="@dimen/space_8"
         android:onClick="expand"
         android:src="@drawable/ic_expand_more_black_24dp"
-        android:background="?selectableItemBackgroundBorderless"
         app:layout_constraintTop_toBottomOf="@+id/date_time"
         app:layout_constraintRight_toRightOf="parent"/>
 

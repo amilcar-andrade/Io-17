@@ -2,6 +2,9 @@ package android.io_17;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getResources().getString(R.string.feed));
         constraintLayout = (ConstraintLayout) findViewById(R.id.constraint);
         ImageView expandIcon = (ImageView) findViewById(R.id.expand_icon);
+        expandIcon.setBackgroundResource(getSelectableBackground());
         constraintSet.load(this, R.layout.activity_main_collapse);
         constraintSetExpanded.load(this, R.layout.activity_main_expand);
         if (savedInstanceState != null) {
@@ -59,5 +63,13 @@ public class MainActivity extends AppCompatActivity {
         }
         animator.setTarget(v);
         animator.start();
+    }
+
+    private int getSelectableBackground() {
+        int[] attrs = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? new int[]{R.attr.selectableItemBackgroundBorderless} : new int[]{R.attr.selectableItemBackground};
+        TypedArray typedArray = MainActivity.this.obtainStyledAttributes(attrs);
+        int backgroundResource = typedArray.getResourceId(0, 0);
+        typedArray.recycle();
+        return backgroundResource;
     }
 }
