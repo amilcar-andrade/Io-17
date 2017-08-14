@@ -1,5 +1,7 @@
 package android.io_17;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
@@ -47,11 +49,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void applyConfig(View v) {
-        v.setActivated(expanded);
+        final Animator animator;
         if (expanded) {
             constraintSetExpanded.applyTo(constraintLayout);
+            animator = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.icon_expand );
         } else {
             constraintSet.applyTo(constraintLayout);
+            animator = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.icon_collapse);
         }
+        animator.setTarget(v);
+        animator.start();
     }
 }
